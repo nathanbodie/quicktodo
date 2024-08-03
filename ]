@@ -5,7 +5,6 @@
 	let list: List | undefined = $state();
 	let lists: List[] | undefined = $state(localLists.value);
 	let taskInput: string = $state("");
-	let taskInputElement: HTMLInputElement;
 
 	onMount(() => {
 		list = localLists.value!.find((l) => l.id);
@@ -32,12 +31,6 @@
 		});
 
 		taskInput = "";
-		taskInputElement.focus();
-	}
-
-	function addTaskRetainingFocus(e: Event) {
-		e.preventDefault();
-		addTask(taskInput);
 	}
 </script>
 
@@ -80,11 +73,10 @@
 				>
 				<form
 					class="flex flex-col w-full"
-					onsubmit={addTaskRetainingFocus}
+					onsubmit={() => addTask(taskInput)}
 				>
 					<input
 						bind:value={taskInput}
-						bind:this={taskInputElement}
 						type="text"
 						class="h-8 hover:underline text-ellipsis overflow-hidden bg-transparent border-b-2"
 					/>
