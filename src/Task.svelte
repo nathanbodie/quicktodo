@@ -1,6 +1,10 @@
 <script lang="ts">
+	import { localLists } from "$lib/storage.svelte";
+
 	export let isChecked: boolean;
 	export let description: string;
+
+	$effect(() => localLists.update());
 </script>
 
 <ul class="flex flex-col gap-4 py-4 text-3xl">
