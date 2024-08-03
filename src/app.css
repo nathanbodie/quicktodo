@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@200..800&family=Onest:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --white:#f8f8f8;
+  --black:#000000;
+
+  color: var(--white);
+}
+
+.onest-<uniquifier> {
+  font-family: "Onest", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.biorhyme-<uniquifier> {
+  font-family: "BioRhyme", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
