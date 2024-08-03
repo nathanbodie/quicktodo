@@ -5,7 +5,7 @@ const browserExists = (typeof window !== "undefined") && (typeof (document) !== 
 const storage = browserExists ? localStorage : null;
 
 export function persisted<T>(key: string, defaultValue: T) {
-	let value: T | undefined = writable();
+	let value: T | undefined = $state();
 
 	const initLocal = storage?.getItem(key);
 	if (initLocal) {

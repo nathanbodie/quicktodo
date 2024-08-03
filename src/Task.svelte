@@ -1,19 +1,17 @@
 <script lang="ts">
-	import { localLists } from "$lib/storage.svelte";
-
-	export let isChecked: boolean;
-	export let description: string;
+	import { type Task, localLists } from "$lib/storage.svelte";
+	let task: Task | undefined = $state();
 
 	$effect(() => localLists.update());
 </script>
 
 <ul class="flex flex-col gap-4 py-4 text-3xl">
 	<li class="group flex justify-between items-center gap-4">
-		<input type="checkbox" bind:checked={isChecked} />
+		<input type="checkbox" bind:checked={task?.isChecked} />
 		<input
 			type="text"
 			class="w-full h-8 hover:underline text-ellipsis overflow-hidden bg-transparent border-b-2"
-			bind:value={description}
+			bind:value={task?.description}
 		/>
 		<button class="trash-button">🗑️</button>
 	</li>
