@@ -14,7 +14,7 @@
 
 <div class="flex flex-col">
 	<div>
-		<h1 class="font-serif text-5xl font-bold">quicktodo</h1>
+		<h1 class="font-serif text-5xl font-bold">quicktodo 📃</h1>
 	</div>
 </div>
 
